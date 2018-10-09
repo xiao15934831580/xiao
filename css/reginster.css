@@ -1,0 +1,239 @@
+body,div,p,ul,ol,li,dl,dt,dd,table,tr,td,th,form,h1,h2,h3,h4,h5,h6,input,textarea{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration:none;
+	}
+li{
+	list-style:none;
+	}
+body{
+	overflow-y: auto;
+	height: 100%;
+}
+.register{
+	height: auto;
+	width: 100%;
+	min-height: 100%;
+	/*background-color: #F15A2A;*/
+}
+.register_top{
+	width: 854px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    /*background-color: #F1E4DB;*/
+}
+.register_top_form{
+	width:330px ;
+	/*height: 530px;*/
+	margin: 0 auto;
+	/*background-color: #F5F5F5;*/
+}
+.register_top_con{
+	text-align: center;
+    padding-top: 40px;
+}
+.logo{
+	display: block;
+	width: 49px;
+    height: 48px;
+    margin: 0 auto;
+    display: block;
+    cursor: default;
+    padding-bottom: 40px;
+    padding-top: 80px;
+}
+.Account{
+	font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 35px;
+}
+.Account_form{
+	width: 100%;
+	height: auto;
+}
+.area{
+	color: #333;
+	font-size: 18px;
+	font-weight: 100;
+}
+.country{
+	width: 328px;
+	height: 40px;
+	border: 1px solid #e8e8e8;
+	margin: 20px 0;
+	position: relative;
+}
+.country p{
+	width: 290px;
+	color: #424242;
+	font-size: 14px;
+	line-height: 40px;
+	text-indent: 2em;
+	float: left;
+	border-right: 1px solid #e8e8e8;
+}
+.small_image{
+	width: 37px;
+	height: 40px;
+	float: right;
+}
+.country_hide{
+	width: 100%;
+	display: none;
+	border: 1px solid #e8e8e8;
+	position: absolute;
+	left: 0;
+	top: 42px;
+	background-color: #FFFFFF;
+	z-index: 2;
+
+}
+.country_int{
+	margin: 6px 10px;	
+	height: 30px;
+	border: 1px solid #e8e8e8;
+}
+.inp{
+	height: 30px;
+	width: 100%;
+}
+.country_hideul{
+	width: 100%;
+	height: 200px;
+	border: 1px solid #e8e8e8;
+	overflow-y: scroll;
+	
+}
+.country_hideul li{
+	line-height: 30px;
+	border-bottom: 1px solid #e8e8e8;
+	text-indent: 2em;
+}
+.country_hideul li:hover{
+	background-color: #e8e8e8;
+}
+.Common_country{
+	background-color: #FF6700;
+}
+.success{
+	color: #666666;
+	font-size: 13px;
+	text-indent: 1em;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.phone_num{
+	color: #333;
+	font-size: 16px;
+	font-weight: 100;
+	margin-bottom: 10px;
+}
+/*电话号码*/
+.phone{
+	width: 100%;
+	height: 40px;
+	border: 1px solid #e8e8e8;
+	margin-bottom: 30px;
+	position: relative;
+}
+/*隐藏的ul*/
+
+.phone_country{
+	width: 70px;
+	height: 40px;
+	float: left;
+}
+.phone_country p{
+	width: auto;
+    border-right: 0 none;
+    line-height: 40px;
+    text-indent: 1em;
+}
+.phone_num_box{
+	/*width: 260px;
+	height: 38px;*/
+	float: right;
+}
+.phone_num_box .txt{
+	width: 255px;
+	height: 38px;
+	border: 1px solid #e8e8e8;
+} 
+.in{
+	width: 100%;
+	display: none;
+}
+.in p{
+	color: #ff6700;
+	font-size: 12px;
+	text-indent: 2em;
+}
+.zhuce{
+	width: 100%;
+	height: 43px;
+	/*background-color: #ff6700;*/
+	margin-top: 30px;
+}
+.zhuce input{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	line-height: 40px;
+	background-color: #ff6700;
+	color: #FFFFFF;
+	font-size: 14px;
+	border: none;
+}
+.register_top_con{
+	width: 854px;
+	margin: 0 auto;
+	text-align: center;
+}
+.register_top_con p{
+	color: #9d9d9d;
+	font-size: 13px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+.register_top_con p a{
+	font-weight: 600;
+	font-size: 14px;
+	color: #000000;
+}
+/*注册页面底部*/
+.register_bottom{
+	width:100%;
+	/*margin-bottom: 27px;*/
+	text-align: center;
+	height: 80px;
+	margin-top: 90px;
+}
+.register_bottomul{
+	width: 100%;
+	/*margin: 0 auto;*/
+	height: auto;
+	/*text-align: center;*/
+}
+.register_bottomul li{
+	display: inline-block;
+	text-align: center;
+}
+.register_bottomul li a{
+	display: inline-block;
+	color: #757575;
+	font-size: 14px;
+	margin-right:10px ;
+	margin-left: 10px;
+	
+}
+.register_bottomul li a:hover{
+	color: #000000;
+}
+.register_bottom p{
+	color: #9d9d9d;
+	font-size: 13px;
+	margin-top: 19px;
+}

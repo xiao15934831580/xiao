@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/phone.css" />
+</head>
+	<body>
+		<div class="register">
+			<!--注册表单上部-->
+			<div class="register_top">
+				<div class="register_top_form">
+					<img class="logo" src="img/logo-footer.png">
+					<p class="Account">注册小米账号</p>
+					<div class="Account_form">
+						<h3 class="area">国家/地区</h3>
+						<div class="country">
+							<p class="countryc">中国</p>
+							<div class="small_image">
+								
+							</div>
+							<!--<需要隐藏的ul>-->
+							<div class="country_hide">
+								<div class="country_int">
+									<input type="text" class="inp"/>
+								</div>
+								<ul class="country_hideul">
+									<li class="Common_country">常用国家</li>
+									<li>中国</li>
+									<li>香港</li>
+									<li>美国</li>
+									<li>意大利</li>
+									<li>英国</li>
+									<li>法国</li>
+									<li>德国</li>
+									<li>澳大利亚</li>
+								</ul>
+							</div>
+						</div>
+						
+						<p class="success">成功注册成功后国家和地区将不能被修改</p>
+						<h3 class="phone_num">手机号码</h3>
+						<div class="phone">
+							<div class="phone_country">
+								<p class="phone_numa">+86</p>
+								<!--增加向下箭头的字体小图标-->
+							</div>
+							<div class="phone_num_box">
+								<input type="text" class="txt" placeholder="请输入手机号" />
+							</div>
+							<!--phone下边隐藏的ul盒子-->
+							<!--<需要隐藏的ul>-->
+							<div class="phone_hide">
+								<div class="phone_int">
+									<input type="text" class="phone_inp"/>
+								</div>
+								<ul class="phone_hideul">
+									<li class="Common_country">常用国家</li>
+									<li>中国 <span>+86</span></li>
+									<li>香港<span>+103</span></li>
+									<li>美国<span>+156</span></li>
+									<li>意大利</li>
+									<li>英国</li>
+									<li>法国</li>
+									<li>德国</li>
+									<li>澳大利亚</li>
+								</ul>
+							</div>
+						</div>
+						<!--请输入手机号-->
+						<div class="in">
+							<!--增加字体小图标-->
+							<p class="innum">请输入手机号码</p>
+						</div>
+						<!--立即注册按钮-->
+						<div class="zhuce">
+							<input type="submit" value="立即注册" />
+						</div>
+					</div>
+				</div>
+				<!--注册下面的文字内容-->
+				<div class="register_top_con">
+					<!--增加字体小图标-->
+					<p>注册帐号即表示您同意并愿意遵守小米<a href="#">用户协议</a> 和<a href="#">隐私政策</a> </p>
+				</div>
+			</div>
+			<!--底部-->
+			<div class="register_bottom">
+				<ul class="register_bottomul">
+					<li><a href="#">简体</a>|</li>
+					<li><a href="#">繁体</a>|</li>
+					<li><a href="#">English</a>|</li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+				<p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+//		给body绑定点击事件（1.对应下边的国家对应盒子的显示，2.对应下边电话对应的盒子的显示）
+		$("body").click(function(event){
+//			console.log(target.className);
+			var target=event.target;
+			console.log(target.className);
+//			1.先获取国家下面ul盒子目前的状态
+			var hidea=$(".country_hide").css("display");
+			console.log(hidea);
+//			获取电话num下边对应的隐藏的大盒子
+			var phonehide=$(".phone_hide").css("display");
+//				1.2.判断点击的是否是国家country,(如果是country，判断目前的状态，)
+			if(target.className=="countryc"){
+				if(hidea=="none"){
+					$(".country_hide").show(200);
+				}else{
+	//				2.2显示时
+	//					2.2.1判断点击的是哪里(如果是在盒子内部框,则显示,否则隐藏)
+					if(target.className=="inp")	{
+//						??阻止事件冒泡
+						event.stopPropagation();
+//						$(".country_hide").stop();
+					}else{
+						$(".country_hide").hide(200);
+					}
+				}
+			}else if(target.className=="phone_numa"){
+//				判断点击的是否是电话对应的class名
+				if(phonehide=="none"){
+						$(".phone_hide").show(500);
+				}else{
+					if(target.className=="phone_inp"){
+						$(".phone_hide").stop();
+					}else{
+						$(".phone_hide").hide();
+					}
+				}
+			}
+			else{
+					$(".phone_hide").css("display","none");
+					$(".country_hide").css("display","none");
+			}
+		})
+//		选择国家让其显示在国家对应的p标签中
+		$(".country_hideul li").on("click",function(event){
+			let target=event.target;
+			//获取li中的文本内容
+			//判断当前选中的li是否是标题栏，class名为Common_country
+			if(target.className=="Common_country"){
+				return;
+			}else{
+				let con=$(this).html();
+				console.log(con);
+				$(".countryc").html(con);
+			}
+		})
+//		点击电话左边的数字显示下边的国际以及相对应的数字编码
+		$(".phone_hideul li").on("click",function(event){
+			let target=event.target;
+			if(target.className=="Common_country"){
+				return;
+			}else{
+				let coa=$(this).find("span").html();
+				console.log(coa);
+				$(".phone_numa").html(coa);
+			}
+		})
+//		正则判断输入的内容格式是否正确,若正确跳转至验证码,若不正确(1.提示内容改变,2.边框颜色改变)
+//		1.当鼠标点击input框后未输入内容后离开,提示内容显示("请输入电话号码")
+//		2.当鼠标点击注册时,用正则判断,若未输入内容,则显示("请输入内容"),若输入格式不正确则显示("请输入正确的格式");	
+//		1.当鼠标点击input框后未输入内容后离开,提示内容显示("请输入电话号码")
+		
+//		var zhuce=function(){
+//			var isPassSuccess = false;
+//			console.log($(this).val());
+////			1.1判断输入框中是否有内容
+//			if($(this).val()==""){
+//				$(".in").show();
+//				$(".txt").css("border","1px solid #ff6700");
+//			}else{
+////			1.2有内容,则用正则判断输入框中的内容格式是否正确,
+////				1.2.1内容格式不正确显示"请输入正确的格式"
+//				var reg = /^1[3-9]\d{9}$/; 
+//				if(reg.test($(this).val())){
+//					isPassSuccess=true;
+//					$(".in").hide();
+//				}else{
+//					$(".innum").html("输入格式不正确")
+//					$(".in").show();
+//					$(".txt").css("border","1px solid #ff6700");
+//				}
+//			}
+//		}
+//		
+		$(".txt").blur(function(){
+			var isPassSuccess = false;
+			console.log($(this).val());
+//			1.1判断输入框中是否有内容
+			if($(this).val()==""){
+				$(".in").show();
+				$(".txt").css("border","1px solid #ff6700");
+			}else{
+//			1.2有内容,则用正则判断输入框中的内容格式是否正确,
+//				1.2.1内容格式不正确显示"请输入正确的格式"
+				var reg = /^1[3-9]\d{9}$/; 
+				if(reg.test($(this).val())){
+					isPassSuccess=true;
+					$(".in").hide();
+				}else{
+					$(".innum").html("输入格式不正确")
+					$(".in").show();
+					$(".txt").css("border","1px solid #ff6700");
+				}
+			}
+		});
+		$(".txt").on("keydown",function(){
+			$(".txt").stop();
+			$(".in").hide();
+			$(".txt").css("border","1px solid #e8e8e8");
+		})
+//		点击注册按钮,判断输入框中的内容,
+//		$(".zhuce").on("click",zhuce)
+		$(".zhuce").on("click",function(){
+				$.ajax({
+		            type: "post",
+		            url: "http://localhost/xiaomi/phone.php",
+		            data: "username="+$(".txt").val(),
+		            dataType: "text",
+		            success: function (response) {
+		                console.log(response);
+		                if(response=="注册成功"){
+		                        saveCookie("username",$(".txt").val(),7);
+		                        console.log(document.cookie); 
+		                        alert("注册成功，请登录")
+		                        $(location).attr("href","login.html");
+		          
+		                }else{
+		                     alert("用户名已经存在")
+		                }
+		            }
+	        });
+		})
+		
+	 	function saveCookie(key,value,dayCount){
+			var d = new Date();
+			d.setDate(d.getDate()+dayCount);
+			document.cookie = encodeURIComponent(key+"="+value)+";expires="+d.toGMTString();	
+		}
+
+	})
+</script>

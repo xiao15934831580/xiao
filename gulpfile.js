@@ -1,0 +1,80 @@
+let gulp=require("gulp");
+var sass=require("gulp-sass");
+gulp.task("copy-html",function(){
+	gulp.src("*.html")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi"))
+})
+gulp.task("images",function(){
+	gulp.src("img/*.{jpg,png,gif}")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\img"))
+})
+gulp.task("phpa",function(){
+	gulp.src("*.php")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi"))
+})
+gulp.task("json",function(){
+	gulp.src("*.json")
+	.pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi"))
+})
+gulp.task("copycss",function(){
+    gulp.src("css/*.css")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\css"));
+});
+gulp.task("copyjs",function(){
+    gulp.src("js/*.js")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\js"));
+});
+gulp.task("copyfonta",function(){
+    gulp.src("font/*.css")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("copyfontb",function(){
+    gulp.src("font/*.html")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("copyfontc",function(){
+    gulp.src("font/*.eot")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("copyfontd",function(){
+    gulp.src("font/*.svg")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("copyfonte",function(){
+    gulp.src("font/*.ttf")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("copyfontf",function(){
+    gulp.src("font/*.woff")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\font"));
+});
+gulp.task("scssa",function(){
+	 gulp.src("sassa/*.scss")
+	 .pipe(sass())
+	 .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\css"));
+})
+gulp.task("good-h1",function(){
+    gulp.src("goodsAndShoppingCart/*.php")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\goodsAndShoppingCart"));
+});
+gulp.task("good-h2",function(){
+    gulp.src("goodsAndShoppingCart/*.html")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\goodsAndShoppingCart"));
+});
+gulp.task("good-h3",function(){
+    gulp.src("goodsAndShoppingCart/*.js")
+    .pipe(gulp.dest("D:\\phpStudy\\WWW\\xiaomi\\goodsAndShoppingCart"));
+});
+
+gulp.task("auto-watch",function (){
+    gulp.watch("*.html",["copy-html"]);
+    gulp.watch("js/*.js",["copyjs"]);
+    gulp.watch("css/*.css",["copycss"]);
+    gulp.watch("img/*.{jpg,png,gif}",["images"]);
+    gulp.watch("*.php",["phpa"]);
+    gulp.watch("*.json",["json"]);
+    gulp.watch("sassa/**/*.scss",["scssa"]);
+    gulp.watch("goodsAndShoppingCart/*.php",["good-h1"]);
+     gulp.watch("goodsAndShoppingCart/*.html",["good-h2"]);
+      gulp.watch("goodsAndShoppingCart/*.js",["good-h3"]);
+});

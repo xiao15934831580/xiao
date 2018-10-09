@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.Recommend_down{
+				margin: 0 auto;
+				width: 1228px;
+				background-color: #616161;
+				height: 340px;
+			}
+			.swiper-container {
+		      width: 100%;
+		      height:100%;
+		    }
+		    .swiper-slide {
+		    	
+		      text-align: center;
+		      /*font-size: 18px;*/
+		      background: #fff;
+		
+		      /* Center slide text vertically */
+		      display: -webkit-box;
+		      display: -ms-flexbox;
+		      display: -webkit-flex;
+		      display: flex;
+		      -webkit-box-pack: center;
+		      -ms-flex-pack: center;
+		      -webkit-justify-content: center;
+		      justify-content: center;
+		      -webkit-box-align: center;
+		      -ms-flex-align: center;
+		      -webkit-align-items: center;
+		      align-items: center;
+		    }
+		    /*.Recommend_down .shoplia{
+		    	float: left;
+		    }*/
+		   
+		     .shoplia{
+		   			height: 340px;
+					width: 235px;
+					border-top: 1px solid #e53935;
+					float: left;
+					margin-left: 13px;
+		    }
+		    .shoplia img{
+		   		 display: block;
+				width: 160px;
+				height: 166px;
+				margin: 30px auto 22px;
+		    }
+		    .shoplia h2{
+		    	color: #202020;
+				font-size: 12px;
+				text-align: center;
+				width: 180px;
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				margin: 0 auto;
+		    }
+		    .shoplia h3{
+		    	font-size: 10px;
+				color: #adadad;
+				text-align: center;
+				line-height:38px;
+		    }
+		    .shoplia span{
+		    	display: inline-block;	
+		    }
+		    .yuan{
+		    	color: #fa6509;
+				font-size: 14px;
+				margin-left: 90px;
+				margin-right: 3px;
+		    }
+		    .yuan1{
+		    	color: #adadad;
+				font-size: 14px;
+				text-decoration: line-through;
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="Recommend_down">
+		  	<div class="swiper-container">
+		   		 <div class="swiper-wrapper">
+		     		 <div class="swiper-slide">
+		          		<div class="shoplia" >
+							<img src="img/pms_1481273468.72564539_220x220.jpg"/>
+							<h2>新小米移动电源2 (10000mAh) 黑色</h2>
+							<h3>双向快充，铝合金外壳</h3>
+							<span class="yuan">1元</span>
+							<span class="yuan1">149元</span>
+						</div>
+     				 </div>
+				      <div class="swiper-slide">
+				      		<div class="shoplia" >
+								<img src="img/pms_1481273468.72564539_220x220.jpg"/>
+								<h2>新小米移动电源2 (10000mAh) 黑色</h2>
+								<h3>双向快充，铝合金外壳</h3>
+								<span class="yuan">1元</span>
+								<span class="yuan1">149元</span>
+							</div>
+				      </div>
+   					 <div class="swiper-slide">
+				      		<div class="shoplia" >
+								<img src="img/pms_1481273468.72564539_220x220.jpg"/>
+								<h2>新小米移动电源2 (10000mAh) 黑色</h2>
+								<h3>双向快充，铝合金外壳</h3>
+								<span class="yuan">1元</span>
+								<span class="yuan1">149元</span>
+							</div>
+				      </div>
+				      <div class="swiper-slide">
+				      		<div class="shoplia" >
+								<img src="img/pms_1481273468.72564539_220x220.jpg"/>
+								<h2>新小米移动电源2 (10000mAh) 黑色</h2>
+								<h3>双向快充，铝合金外壳</h3>
+								<span class="yuan">1元</span>
+								<span class="yuan1">149元</span>
+							</div>
+				      </div>
+   					<div class="swiper-slide">
+				      		<div class="shoplia" >
+								<img src="img/pms_1481273468.72564539_220x220.jpg"/>
+								<h2>新小米移动电源2 (10000mAh) 黑色</h2>
+								<h3>双向快充，铝合金外壳</h3>
+								<span class="yuan">1元</span>
+								<span class="yuan1">149元</span>
+							</div>
+				      </div>
+
+   				 </div>
+			    <!-- Add Pagination -->
+			    <!--<div class="swiper-pagination"></div>-->
+			    <!-- Add Arrows -->
+			    <div class="swiper-button-next"></div>
+			    <div class="swiper-button-prev"></div>
+			</div>
+  		</div>
+	</body>
+</html>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 4,
+      spaceBetween: 30,
+      slidesPerGroup: 4,
+      loop: true,
+      loopFillGroupWithBlank: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>

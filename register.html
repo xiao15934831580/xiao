@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="css/reginster.css" />
+</head>
+	<body>
+		<div class="register">
+			<!--注册表单上部-->
+			<div class="register_top">
+				<div class="register_top_form">
+					<img class="logo" src="img/logo-footer.png">
+					<p class="Account">注册小米账号</p>
+					<div class="Account_form">
+						<h3 class="area">国家/地区</h3>
+						<div class="country">
+							<p class="countryc">中国</p>
+							<div class="small_image">
+								
+							</div>
+							<!--<需要隐藏的ul>-->
+							<div class="country_hide">
+								<div class="country_int">
+									<input type="text" class="inp"/>
+								</div>
+								<ul class="country_hideul">
+									<li class="Common_country">常用国家</li>
+									<li>中国 <span>+86</span></li>
+									<li>香港<span>+103</span></li>
+									<li>美国<span>+156</span></li>
+									<li>意大利</li>
+									<li>英国</li>
+									<li>法国</li>
+									<li>德国</li>
+									<li>澳大利亚</li>
+								</ul>
+							</div>
+						</div>
+						
+						<p class="success">成功注册成功后国家和地区将不能被修改</p>
+						<h3 class="phone_num">手机号码</h3>
+						<div class="phone">
+							<div class="phone_country">
+								<p class="phone_numa">+86</p>
+								<!--增加向下箭头的字体小图标-->
+							</div>
+							<div class="phone_num_box">
+								<input type="text" class="txt" placeholder="请输入手机号" />
+							</div>
+							
+						</div>
+						<div class="in">
+							<!--增加字体小图标-->
+							<p>请输入手机号码</p>
+						</div>
+						<div class="zhuce">
+							<input type="submit" value="立即注册" />
+						</div>
+					</div>
+				</div>
+				<!--注册下面的文字内容-->
+				<div class="register_top_con">
+					<!--增加字体小图标-->
+					<p>注册帐号即表示您同意并愿意遵守小米<a href="#">用户协议</a> 和<a href="#">隐私政策</a> </p>
+				</div>
+			</div>
+			<!--底部-->
+			<div class="register_bottom">
+				<ul class="register_bottomul">
+					<li><a href="#">简体</a>|</li>
+					<li><a href="#">繁体</a>|</li>
+					<li><a href="#">English</a>|</li>
+					<li><a href="#">常见问题</a></li>
+				</ul>
+				<p>小米公司版权所有-京ICP备10046444-京公网安备11010802020134号</p>
+			</div>
+		</div>
+	</body>
+</html>
+<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+//		点击国家,让下面隐藏的ul显示，若显示则让隐藏
+		$("body").click(function(event){
+//			console.log(target.className);
+			var target=event.target;
+			console.log(target.className);
+//			1.先获取国家下面ul盒子目前的状态
+			var hidea=$(".country_hide").css("display");
+			console.log(hidea);
+//			获取电话num下边对应的隐藏的大盒子
+			var phonehide=$(".phone_hide").css("display");
+//				1.2.判断点击的是否是国家country,(如果是country，判断目前的状态，)
+			if(target.className=="countryc"){
+				if(hidea=="none"){
+					$(".country_hide").show(200);
+				}else{
+	//				2.2显示时
+	//					2.2.1判断点击的是哪里(如果是在盒子内部框,则显示,否则隐藏)
+					if(target.className=="inp")	{
+//						??阻止事件冒泡
+						event.stopPropagation();
+//						$(".country_hide").stop();
+					}else{
+						$(".country_hide").hide(200);
+					}
+				}
+			}else if(target.className=="phone_numa"){
+//				判断点击的是否是电话对应的class名
+				if(phonehide=="none"){
+						$(".phone_hide").show(500);
+				}else{
+					if(target.className=="phone_inp"){
+						$(".phone_hide").stop();
+					}else{
+						$(".phone_hide").hide();
+					}
+				}
+			}
+			else{
+					$(".phone_hide").css("display","none");
+					$(".country_hide").css("display","none");
+			}
+		})
+
+//		选择国家让其显示在国家对应的p标签中
+		$(".country_hideul li").on("click",function(event){
+			var target=event.target;
+			//获取li中的文本内容
+			//判断当前选中的li是否是标题栏，class名为Common_country
+			if(target.className=="Common_country"){
+				return;
+			}else{
+				var con=$(this).html();
+				console.log(con);
+				$(".countryc").html(con);
+			}	
+		})
+		
+//		输入电话 号码时,点击向下箭头显示下拉菜单??
+		$(".phone_country").on("click",function(){
+			$(".country_hideul").show();
+		})
+		
+	})
+</script>
